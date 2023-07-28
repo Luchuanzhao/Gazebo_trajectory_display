@@ -1,0 +1,36 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="base_traj">
+
+ <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "root" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <link name="root">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.05"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+<!--Note that the "topicName" is the topic name in launch file, it should be the same. 
+	Here, topicName is "base_pose_ground_truth" and so do it in the launch file(draw.launch)-->
+  <gazebo reference="root">
+    <visual>
+      <plugin filename="libdraw_traj.so" name="drawtrajPlugin">
+        <topicName>/base_pose_ground_truth</topicName>
+      </plugin>
+    </visual>
+  </gazebo>
+
+</robot>

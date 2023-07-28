@@ -1,0 +1,22 @@
+<package>
+  <name>draw_trajectory</name>
+  <version>0.0.1</version>
+  <description>Display the trajectory of models in Gazebo</description>
+  <maintainer email="luchuanzhao2000@gmail.com">Lu Chuanzhao</maintainer>
+  <license>SEU Non-commercial</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>message_filters</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>message_filters</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+</package>
